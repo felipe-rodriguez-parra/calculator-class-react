@@ -13,6 +13,12 @@ class App extends React.Component {
     };
   }
 
+  handleClick(e) {
+    this.setState({
+      screen: e,
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -21,6 +27,7 @@ class App extends React.Component {
           <Screen screen={this.state.screen} />
             <div className='row'>
               <Button
+                onClick={(e) => this.handleClick(e)}
                 name={data.slice(15, 19).map(data => {
                   return (
                     <div className='button-container'>
