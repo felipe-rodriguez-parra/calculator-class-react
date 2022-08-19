@@ -11,9 +11,11 @@ class App extends React.Component {
       data: data,
       screen: '0',
     };
+
+    this.changeNumber = this.changeNumber.bind(this);
   }
 
-  handleClick(e) {
+  changeNumber(e) {
     this.setState({
       screen: e,
     });
@@ -27,7 +29,7 @@ class App extends React.Component {
           <Screen screen={this.state.screen} />
             <div className='row'>
               <Button
-                onClick={(e) => this.handleClick(e)}
+                onChange={this.changeNumber}
                 name={data.slice(15, 19).map(data => {
                   return (
                     <div className='button-container'>
@@ -38,6 +40,7 @@ class App extends React.Component {
             </div>
             <div className='row'>
               <Button
+                onChange={this.changeNumber}
                 name={data.slice(0, 4).map(data => {
                   return (
                     <div className='button-container'>
@@ -48,6 +51,7 @@ class App extends React.Component {
             </div>
             <div className='row'>
               <Button
+                onChange={this.changeNumber}
                 name={data.slice(4, 8).map(data => {
                   return (
                     <div className='button-container'>
@@ -58,6 +62,7 @@ class App extends React.Component {
             </div>
             <div className='row'>
               <Button
+                onChange={this.changeNumber}
                 name={data.slice(8, 12).map(data => {
                   return (
                     <div className='button-container'>
@@ -68,6 +73,7 @@ class App extends React.Component {
             </div>
             <div className='row'>
               <Button
+                onChange={this.changeNumber}
                 name={data.slice(12, 15).map(data => {
                   return (
                     <div className='button-container'>
