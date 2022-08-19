@@ -1,0 +1,21 @@
+﻿
+.screen-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-bottom: 25px;
+}
+.screen-container-texto {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 38px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 15px;
+}
+
