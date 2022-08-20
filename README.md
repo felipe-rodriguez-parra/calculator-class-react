@@ -1,4 +1,4 @@
-# Portfolio Project [Calculator]
+# Portfolio Project Calculator
 
 ## Getting Started with Create React App
 
