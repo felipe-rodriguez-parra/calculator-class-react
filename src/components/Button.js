@@ -16,9 +16,9 @@ export class Button extends React.Component {
 
   render(){
     return(
-      <>
+      <div className="button-container" onClick={this.handleChange}>
         {this.props.name}
-      </>
+      </div>
     )
   }
 }
