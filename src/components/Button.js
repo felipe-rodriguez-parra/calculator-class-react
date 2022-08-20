@@ -9,10 +9,14 @@ export class Button extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick() {
     const text = this.props.text;
     this.props.onClick(text);
+  }
 
+  removeHandle() {
+    const text = this.props.text;
+    this.props.delete(text);
   }
 
   render() {

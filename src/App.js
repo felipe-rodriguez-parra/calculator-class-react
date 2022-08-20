@@ -7,16 +7,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      screen: '0',
+      screen: '',
     };
 
     this.changeNumber = this.changeNumber.bind(this);
+    this.deleteNumber = this.deleteNumber.bind(this);
   }
 
   changeNumber(newNumber) {
     const screen = this.state.screen;
     this.setState({
       screen: screen + newNumber,
+    });
+  }
+
+  deleteNumber() {
+    this.setState({
+      screen: '',
     });
   }
 
@@ -30,7 +37,7 @@ class App extends React.Component {
             <div className='row'>
               <Button
                 text='AC'
-                onClick={this.changeNumber} />
+                onClick={this.deleteNumber} />
               <Button
                 text='~'
                 onClick={this.changeNumber}
