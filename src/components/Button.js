@@ -8,17 +8,23 @@ export class Button extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
   }
-  
-  handleClick(e) {
+
+  handleClick() {
     const text = this.props.text;
     this.props.onClick(text);
-
   }
 
-  render(){
-    return(
-      <div 
-        className="button-container"
+  removeHandle() {
+    const text = this.props.text;
+    this.props.delete(text);
+  }
+
+  render() {
+    const text = this.props.text;
+    const allOperators = ['+', '-', '*', '/', 'AC', '%', '~', '='];
+    return (
+      <div
+        className={allOperators.includes(text) ? 'button-container operator' : 'button-container'}
         onClick={this.handleClick}>
         {this.props.text}
       </div>

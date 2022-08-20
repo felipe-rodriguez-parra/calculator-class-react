@@ -1,22 +1,39 @@
 import React from 'react';
 import { Button } from './components/Button';
 import { Screen } from './components/Screen';
+import { evaluate } from 'mathjs';  
 import './App.css';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      screen: '0',
+      screen: '',
     };
 
     this.changeNumber = this.changeNumber.bind(this);
+    this.deleteNumber = this.deleteNumber.bind(this);
+    this.calculate = this.calculate.bind(this);
   }
 
   changeNumber(newNumber) {
+    const screen = this.state.screen;
     this.setState({
-      screen: newNumber,
+      screen: screen + newNumber,
     });
+  }
+
+  deleteNumber() {
+    this.setState({
+      screen: '',
+    });
+  }
+
+  calculate() {
+    this.setState({
+      screen: evaluate(this.state.screen)
+    })
   }
 
   render() {
@@ -26,23 +43,6 @@ class App extends React.Component {
           <div className='calculator-container'>
             <Screen 
               screen={this.state.screen} />
-            <div className='row'>
-              <Button
-                text='AC'
-                onClick={this.changeNumber} />
-              <Button
-                text='~'
-                onClick={this.changeNumber}
-              />
-              <Button
-                text='%'
-                onClick={this.changeNumber}
-              />
-              <Button
-                text='/'
-                onClick={this.changeNumber}
-              />
-            </div>
             <div className='row'>
               <Button
                 text='1'
@@ -99,6 +99,10 @@ class App extends React.Component {
             </div>
             <div className='row'>
               <Button
+                text='='
+                onClick={this.calculate}
+              />
+              <Button
                 text='0'
                 onClick={this.changeNumber}
               />
@@ -107,9 +111,14 @@ class App extends React.Component {
                 onClick={this.changeNumber}
               />
               <Button
-                text='='
+                text='/'
                 onClick={this.changeNumber}
               />
+            </div>
+            <div className='row'>
+              <Button
+                text='AC'
+                onClick={this.deleteNumber} />
             </div>
           </div>
         </header>

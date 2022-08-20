@@ -5,23 +5,23 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  background-color: #1b1b32;
+  background-color: #D741A7;
   font-size: 38px;
   color: #fff;
   border-radius: 25px;
-  border: 2px solid white;
+  border: 1px solid white;
   cursor: pointer;
   user-select: none;
 }
-.button-contenedor:hover {
-  background-color: #fff;
-  color: #1b1b32;
+.button-container:hover {
+  background-color: #3A1772;
+  color: #fff;
 }
 
 .operator {
-  background-color: #00471b; 
+  background-color: #F2CD5D; 
 }
 .operator:hover {
-  background-color: #ff6600;
+  background-color: #DEA54B;
   color: #fff;
 }
