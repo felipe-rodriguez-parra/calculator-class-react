@@ -24,8 +24,6 @@ export class Button extends React.Component {
     const allOperators = ['+', '-', '*', '/', 'AC', '%', '~', '='];
     return (
       <div
-        // className="button-container"
-        // className={text === 'AC' || text ? 'button-container operator' : 'button-container'}
         className={allOperators.includes(text) ? 'button-container operator' : 'button-container'}
         onClick={this.handleClick}>
         {this.props.text}
