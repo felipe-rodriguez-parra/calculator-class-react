@@ -14,8 +14,9 @@ class App extends React.Component {
   }
 
   changeNumber(newNumber) {
+    const screen = this.state.screen;
     this.setState({
-      screen: newNumber,
+      screen: screen + newNumber,
     });
   }
 
