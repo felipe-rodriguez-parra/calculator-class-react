@@ -1,23 +1,21 @@
 import React from 'react';
 import { Button } from './components/Button';
 import { Screen } from './components/Screen';
-import data from './datasets/data.json';
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data,
       screen: '0',
     };
 
     this.changeNumber = this.changeNumber.bind(this);
   }
 
-  changeNumber(e) {
+  changeNumber(newNumber) {
     this.setState({
-      screen: e,
+      screen: newNumber,
     });
   }
 
@@ -26,61 +24,92 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <div className='calculator-container'>
-          <Screen screen={this.state.screen} />
+            <Screen 
+              screen={this.state.screen} />
             <div className='row'>
               <Button
-                onChange={this.changeNumber}
-                name={data.slice(15, 19).map(data => {
-                  return (
-                    <div className='button-container'>
-                      {data.name}
-                    </div>
-                  )
-                })} />
+                text='AC'
+                onClick={this.changeNumber} />
+              <Button
+                text='~'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='%'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='/'
+                onClick={this.changeNumber}
+              />
             </div>
             <div className='row'>
               <Button
-                onChange={this.changeNumber}
-                name={data.slice(0, 4).map(data => {
-                  return (
-                    <div className='button-container'>
-                      {data.name}
-                    </div>
-                  )
-                })} />
+                text='1'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='2'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='3'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='+'
+                onClick={this.changeNumber}
+              />
             </div>
             <div className='row'>
               <Button
-                onChange={this.changeNumber}
-                name={data.slice(4, 8).map(data => {
-                  return (
-                    <div className='button-container'>
-                      {data.name}
-                    </div>
-                  )
-                })} />
+                text='4'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='5'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='6'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='-'
+                onClick={this.changeNumber}
+              />
             </div>
             <div className='row'>
               <Button
-                onChange={this.changeNumber}
-                name={data.slice(8, 12).map(data => {
-                  return (
-                    <div className='button-container'>
-                      {data.name}
-                    </div>
-                  )
-                })} />
+                text='7'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='8'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='9'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='*'
+                onClick={this.changeNumber}
+              />
             </div>
             <div className='row'>
               <Button
-                onChange={this.changeNumber}
-                name={data.slice(12, 15).map(data => {
-                  return (
-                    <div className='button-container'>
-                      {data.name}
-                    </div>
-                  )
-                })} />
+                text='0'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='.'
+                onClick={this.changeNumber}
+              />
+              <Button
+                text='='
+                onClick={this.changeNumber}
+              />
             </div>
           </div>
         </header>

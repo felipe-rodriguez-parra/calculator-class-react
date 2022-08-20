@@ -6,18 +6,21 @@ export class Button extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
-  handleChange(e) {
-    const number = e.target.value;
-    this.props.onChange(number);
+  handleClick(e) {
+    const text = this.props.text;
+    this.props.onClick(text);
+
   }
 
   render(){
     return(
-      <div className="button-container" onClick={this.handleChange}>
-        {this.props.name}
+      <div 
+        className="button-container"
+        onClick={this.handleClick}>
+        {this.props.text}
       </div>
     )
   }
