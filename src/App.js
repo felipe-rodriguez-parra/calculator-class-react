@@ -129,3 +129,12 @@ class App extends React.Component {
 
 
 export default App;
+// JavaScript 
+// TODO: add functionality to delete last number from screen
+// TODO: add functionality to divide by 0 not Infinity
+// TODO: add functionality to divide by 0 in 0 / 0 = 0 not NaN
+// TODO: add functionality to calculate with brackets
+
+// CSS styling
+// TODO: make the app responsive
+// TODO: add shadows to the screen
