@@ -1,6 +1,6 @@
 {
   "hosting": {
-
+    "site": "calculator-4d64b",
     "public": "build",
     "ignore": [
       "firebase.json",
